@@ -2,9 +2,20 @@ import streamlit as st
 import requests
 import random
 
+<<<<<<< HEAD
 API_BASE_URL = st.secrets["ENDPOINT"]
 selected_bot_id = st.secrets["BOT"]
 # -------------------------
+=======
+# ------------------------------------------------------------------
+# CONFIG
+# ------------------------------------------------------------------
+st.set_page_config(layout="wide")
+API_BASE_URL = st.secrets["ENDPOINT"]
+selected_bot_id = st.secrets["BOT"]
+
+# ------------------------------------------------------------------
+>>>>>>> af89442 (update)
 # Funciones API
 # -------------------------
 
