@@ -7,6 +7,7 @@ st.set_page_config(layout="wide")
 API_BASE_URL = st.secrets["ENDPOINT"]
 selected_bot_id = st.secrets["BOT"]
 
+
 # ------------------------- Funciones API -------------------------
 def crear_sesion(chatbot_id, user_id):
     try:
@@ -113,7 +114,7 @@ if prompt and current_session:
     # Backend
     try:
         respuestas = enviar_mensaje(selected_bot_id, user_id, current_session, prompt)
-        texto = extraer_texto_respuesta(respuestas) or "⚠️ No recibí texto válido del servidor."
+        texto = respuestas.get("text") or "⚠️ No recibí texto válido del servidor."
     except Exception as e:
         texto = f"⚠️ Ocurrió un error obteniendo la respuesta: {e}"
     # Asistente
